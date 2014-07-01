@@ -4,6 +4,12 @@ class EngradeSensorTestReceiversController < ApplicationController
   def index
     @engrade_sensor_test_receivers = EngradeSensorTestReceiver.all
 
+    new_receiver = EngradeSensorTestReceiver.new
+    new_receiver.body = request.body.to_string
+    new_receiver.headers = request.headers.to_string
+  
+    new_receiver.save!
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @engrade_sensor_test_receivers }

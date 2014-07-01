@@ -5,9 +5,19 @@ class EngradeSensorTestReceiversController < ApplicationController
     @engrade_sensor_test_receivers = EngradeSensorTestReceiver.all
 
     new_receiver = EngradeSensorTestReceiver.new
-    new_receiver.body = request.body.to_string
-    new_receiver.headers = request.headers.to_string
-  
+
+    new_receiver.body = request.body.read
+
+    headers = {}
+
+    request.headers.each do |header|
+      header_title = header[0]
+      header_value = header[1]
+      headers[header_title] = header_value
+    end
+
+    new_receiver.headers = headers.to_s[0..250]
+
     new_receiver.save!
 
     respond_to do |format|

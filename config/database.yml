@@ -19,3 +19,10 @@ test:
   database: rest_client_tester
   pool: 5
   timeout: 5000
+
+production:
+  adapter: postgresql
+  host: ec2-54-204-45-196.compute-1.amazonaws.com
+  database: dcvdae9l3bgva7
+  user: auonwedfmxbrwz
+  password: Jz5OXHX16IPHBT90AObH84-qhG

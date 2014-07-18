@@ -1,6 +1,6 @@
 RestClientTester::Application.routes.draw do
-  resources :engrade_sensor_test_receivers
 
+  resources :engrade_sensor_test_receivers
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
